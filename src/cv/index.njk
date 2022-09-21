@@ -1,0 +1,41 @@
+---
+title: CV
+layout: layouts/base.njk
+data: cv
+---
+
+<h1>{{ title }}</h1>
+
+<section>
+    <h2>Jobs</h2>
+    <ol class="cv-list">
+    {% for item in cv %}
+        {% if item.type == "Employed" %}
+        <li>
+            <h3>{{ item.title }}</h3>
+            <h4>{{ item.place }}</h4>
+            <time datetime="{{ item.startDate }}">{{ item.startDate }}</time> - <time datetime="{{ item.endDate }}">{{ item.endDate }}</time>
+            <p>{{ item.description }}</p>
+        </li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+</section>
+
+<section>
+    <h2>Education</h2>
+    <ol class="cv-list">
+    {% for item in cv %}
+        {% if item.type == "Education" %}
+        <li>
+            <h3>{{ item.title }}</h3>
+            <h4>{{ item.place }}</h4>
+            <time datetime="{{ item.startDate }}">{{ item.startDate }}</time> - <time datetime="{{ item.endDate }}">{{ item.endDate }}</time>
+            <p>{{ item.description }}</p>
+        </li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+</section>
+
+<button class="no-print" onclick="window.print(); return false;">Print it / Save as PDF</button>

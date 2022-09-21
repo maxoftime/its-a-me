@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0-canary.14"
+  },
+  "name": "its-a-me",
+  "description": "Just another personal website",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxoftime/its-a-me.git"
+  },
+  "keywords": [
+    "node",
+    "11ty",
+    "html"
+  ],
+  "author": "Max Bergström",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/maxoftime/its-a-me/issues"
+  },
+  "homepage": "https://github.com/maxoftime/its-a-me#readme"
+}

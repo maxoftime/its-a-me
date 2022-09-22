@@ -8,9 +8,9 @@ const cv = [
         type: "Employed"
     },
     {
-        title: "Developer",
+        title: "Fullstack Developer",
         place: "NTM AB",
-        startDate: "Februari 2020",
+        startDate: "February 2020",
         endDate: "September 2021",
         description: "",
         type: "Employed"
@@ -19,15 +19,15 @@ const cv = [
         title: "Head of Digital production",
         place: "NTM AB",
         startDate: "September 2017",
-        endDate: "Febuary 2020",
+        endDate: "February 2020",
         description: "",
         type: "Employed"
     },
     {
         title: "Supervisor, Digital production",
         place: "NTM AB",
-        startDate: "September 2017",
-        endDate: "Febuary 2020",
+        startDate: "October 2015",
+        endDate: "August 2017",
         description: "",
         type: "Employed"
     },
@@ -36,6 +36,14 @@ const cv = [
         place: "NTM AB",
         startDate: "October 2014",
         endDate: "October 2015",
+        description: "",
+        type: "Employed"
+    },
+    {
+        title: "Teachers assistant, course in web fundamentals",
+        place: "Linköping University",
+        startDate: "September 2014",
+        endDate: "October 2014",
         description: "",
         type: "Employed"
     },

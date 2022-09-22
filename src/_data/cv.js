@@ -40,7 +40,7 @@ const cv = [
         type: "Employed"
     },
     {
-        title: "Teachers assistant, course in web fundamentals",
+        title: "Teaching assistant, course in web fundamentals",
         place: "Linköping University",
         startDate: "September 2014",
         endDate: "October 2014",

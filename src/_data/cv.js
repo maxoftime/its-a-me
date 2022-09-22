@@ -32,7 +32,7 @@ const cv = [
         type: "Employed"
     },
     {
-        title: "Digital ad producer, Digital production",
+        title: "Digital ad producer (Digital production)",
         place: "NTM AB",
         startDate: "October 2014",
         endDate: "October 2015",

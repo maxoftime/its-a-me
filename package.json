@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/maxoftime/its-a-me/issues"
   },
-  "homepage": "https://github.com/maxoftime/its-a-me#readme"
+  "homepage": "https://github.com/maxoftime/its-a-me#readme",
+  "dependencies": {
+    "@11ty/eleventy-fetch": "^3.0.0"
+  }
 }

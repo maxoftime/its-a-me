@@ -155,6 +155,12 @@ const skills = [
         type: "CMS",
         rating: ""
     },
+    {
+        name: "Customer support",
+        platform: "management",
+        type: "",
+        rating: ""
+    },
     
 ];
 

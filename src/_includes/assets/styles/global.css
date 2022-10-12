@@ -58,6 +58,11 @@ p {
     max-width: 700px;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
+
 section {
     margin-bottom: 44px;
 }
@@ -112,6 +117,12 @@ section .tags li {
 
 main {
     padding-bottom: 250px;
+}
+
+.blog-post-in-feed a::after {
+    content: " ↪";
+
+
 }
 
 footer {

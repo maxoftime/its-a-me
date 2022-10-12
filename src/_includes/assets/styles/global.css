@@ -45,6 +45,16 @@ nav a {
     padding: 20px 10px;
 }
 
+@media screen and (max-width: 700px) {
+    nav {
+        text-align: left;
+    }
+
+    nav a:first-child {
+        padding-left: 0;
+    }
+}
+
 p {
     max-width: 700px;
 }
@@ -101,17 +111,6 @@ section .tags li {
 
 }
 
-button {
-    border: 2px solid var(--front-color);;
-    background: transparent;
-    padding: 10px;
-}
-
-button:hover {
-    border-left-width: 5px;
-    border-bottom-width: 5px;
-}
-
 main {
     padding-bottom: 250px;
 }
@@ -139,6 +138,14 @@ footer a {
     body {
         font-family: sans-serif;
     }
+    main {
+        padding-bottom: 44px;
+    }
+
+    footer {
+        position: relative;
+    }
+
     .no-print {
         display: none;
     }

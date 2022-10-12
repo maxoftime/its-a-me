@@ -67,17 +67,10 @@ section .work-list, section .skill-list {
     line-height: 1.4;
 } 
 
-section .skill-list li {
-    display: inline;
+section .skills-list {
+    max-width: 700px;
 }
 
-section .skill-list li:after {
-    content: ", ";
-}
-
-section .skill-list li:last-child:after {
-    content: "";
-}
 section .tags {
     padding-left: 0;
     font-family: 'Silkscreen';

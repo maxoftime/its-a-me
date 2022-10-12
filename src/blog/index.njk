@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+title: Blog
+pagination:
+  data: collections.post
+  size: 5
+  reverse: true
+  alias: posts
+---
+<h1>{{ title }}</h1>
+{% for post in posts %}
+  <article>
+    <h2>
+      {{ post.data.title }}
+    </h2>
+    <p class="blog-excerpt">
+      {% excerpt post %}
+      <a href="{{ post.url | url }}">Read full post</a>
+    </p>
+
+  </article>
+{% endfor %}

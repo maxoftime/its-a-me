@@ -32,6 +32,14 @@ const cv = [
         type: "Employed"
     },
     {
+        title: "Wordpress developer",
+        place: "Freelance - Stjärnkalaset.se",
+        startDate: "2015",
+        endDate: "2016",
+        description: "",
+        type: "Employed"
+    },
+    {
         title: "Digital ad producer (Digital production)",
         place: "NTM AB",
         startDate: "October 2014",

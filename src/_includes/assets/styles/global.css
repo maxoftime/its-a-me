@@ -119,7 +119,7 @@ main {
 }
 
 .blog-post-in-feed  {
-    border-left: 4px solid;
+    border-left: 3px solid;
     padding-left: 1.5rem;
     margin-bottom: 3rem;
 }
@@ -130,6 +130,10 @@ main {
 
 .blog-post-in-feed img {
     max-width: 100%;
+}
+
+.sub-page-intro {
+    margin-bottom: 4rem;
 }
 
 footer {

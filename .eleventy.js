@@ -9,7 +9,7 @@ module.exports = function(eleventyConfig) {
     });
   
     eleventyConfig.addFilter('dateReadable', date => {
-      return date.toLocaleDateString();
+      return date.toLocaleDateString('sv-SE');
     });
 
     return {

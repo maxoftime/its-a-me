@@ -1,0 +1,57 @@
+---
+title: Resume
+layout: layouts/base.njk
+---
+
+<h1>{{ title }}</h1>
+
+<section>
+<h2>CV</h2>
+    <h3>Jobs</h3>
+    <ol class="cv-list">
+    {% for item in cv %}
+        {% if item.type == "Employed" and item.active == true %}
+        <li>
+            <h4>{{ item.title }}</h4>
+            <h4>{{ item.place }}</h4>
+            <time datetime="{{ item.startDate }}">{{ item.startDate }}</time> - <time datetime="{{ item.endDate }}">{{ item.endDate }}</time>
+            <p>{{ item.description }}</p>
+        </li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+</section>
+
+<section>
+    <h3>Education</h3>
+    <ol class="cv-list">
+    {% for item in cv %}
+        {% if item.type == "Education"  and item.active == true %}
+        <li>
+            <h4>{{ item.title }}</h4>
+            <h4>{{ item.place }}</h4>
+            <time datetime="{{ item.startDate }}">{{ item.startDate }}</time> - <time datetime="{{ item.endDate }}">{{ item.endDate }}</time>
+            <p>{{ item.description }}</p>
+        </li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+</section>
+
+<section>
+<h2>Samples</h2>
+    <ol class="cv-list work-list">
+    {% for item in jobs %}
+        <li>
+            <h3>{{ item.client }}</h3>
+            <h4>{{ item.role }}</h4>
+            <p>{{ item.description }}</p>
+            <ul class="tags">
+             {% for tech in item.stack %}
+                <li>{{ tech }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ol>
+</section>

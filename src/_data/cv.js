@@ -1,11 +1,21 @@
 const cv = [
     {
-        title: "Frontend developer",
+        title: "Creative Developer",
+        place: "DVA - Creative Technology Studio",
+        startDate: "October 2022",
+        endDate: "Present",
+        description: "",
+        type: "Employed",
+        active: true
+    },
+    {
+        title: "Frontend Developer",
         place: "Familjen STHLM AB",
         startDate: "September 2021",
         endDate: "October 2022",
         description: "",
-        type: "Employed"
+        type: "Employed",
+        active: true
     },
     {
         title: "Fullstack Developer",
@@ -13,7 +23,8 @@ const cv = [
         startDate: "February 2020",
         endDate: "September 2021",
         description: "",
-        type: "Employed"
+        type: "Employed",
+        active: true
     },
     {
         title: "Head of Digital production",
@@ -21,7 +32,8 @@ const cv = [
         startDate: "September 2017",
         endDate: "February 2020",
         description: "",
-        type: "Employed"
+        type: "Employed",
+        active: true
     },
     {
         title: "Supervisor, Digital production",
@@ -29,7 +41,8 @@ const cv = [
         startDate: "October 2015",
         endDate: "August 2017",
         description: "",
-        type: "Employed"
+        type: "Employed",
+        active: true
     },
     {
         title: "Wordpress developer",
@@ -37,7 +50,8 @@ const cv = [
         startDate: "2015",
         endDate: "2016",
         description: "",
-        type: "Employed"
+        type: "Employed",
+        active: true
     },
     {
         title: "Digital ad producer (Digital production)",
@@ -45,7 +59,8 @@ const cv = [
         startDate: "October 2014",
         endDate: "October 2015",
         description: "",
-        type: "Employed"
+        type: "Employed",
+        active: true
     },
     {
         title: "Teaching assistant, course in web fundamentals",
@@ -53,7 +68,8 @@ const cv = [
         startDate: "September 2014",
         endDate: "October 2014",
         description: "",
-        type: "Employed"
+        type: "Employed",
+        active: false
     },
     {
         title: "BSc in Graphic Design and Communication",
@@ -61,7 +77,8 @@ const cv = [
         startDate: "August 2011",
         endDate: "June 2014",
         description: "",
-        type: "Education"
+        type: "Education",
+        active: true
     }
 ];
 

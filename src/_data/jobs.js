@@ -13,7 +13,7 @@ const work = [
     },
     {
         client: "Specialpedagogiska Skolmyndigheten",
-        role: "CSS hacker",
+        role: "CSS hacker (lol)",
         description: "By just using the inbuilt developer tools in the browser, I was consulting the main developers in implementing a new design on SPSMs current fleet of sites.",
         stack: ["CSS", "browser devTools"]
     },

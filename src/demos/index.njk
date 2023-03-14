@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+title: Demos
+pagination:
+  data: collections.demo
+  size: 5
+  alias: demos
+---
+<h1>{{ title }}</h1>
+<p>
+  This is a collection of fun/cool/weird demos/pocs I have made.
+  Some have proper functional demos, others are just write ups or links to code. 
+  <br>
+  It is what it is.
+<p>
+
+
+{% for demo in demos %}
+  <article class="blog-post-in-feed">
+    <h2>
+      {{ demo.data.title }}
+    </h2>
+
+    <p class="blog-excerpt">
+      {% excerpt demo %}
+    </p>
+
+  </article>
+{% endfor %}

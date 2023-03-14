@@ -13,6 +13,7 @@ pagination:
     <h2>
       {{ post.data.title }}
     </h2>
+    <time datetime="{{ post.data.date | dateIso }}">{{ post.data.date | dateReadable }}</time>
     <p class="blog-excerpt">
       {% excerpt post %}
       <a href="{{ post.url | url }}">Read full post</a>

@@ -1,6 +1,7 @@
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/_redirects");
     eleventyConfig.addPassthroughCopy({"src/_includes/assets/" : "assets/" });
+    eleventyConfig.addPassthroughCopy({"src/demos/" : "demos/" });
     eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
     
     eleventyConfig.addFilter('dateIso', date => {

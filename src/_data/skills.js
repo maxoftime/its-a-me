@@ -36,6 +36,12 @@ const skills = [
         rating: ""
     },
     {
+        name: "Three.js",
+        platform: "Web",
+        type: "Clientside",
+        rating: ""
+    },
+    {
         name: "React",
         platform: "Javascript",
         type: "Serverside/Clientside",

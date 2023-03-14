@@ -6,7 +6,7 @@ layout: layouts/base.njk
 <h1>{{ title }}</h1>
 
 <section>
-<h2>CV</h2>
+    <h2>CV</h2>
     <h3>Jobs</h3>
     <ol class="cv-list">
     {% for item in cv %}
@@ -39,7 +39,7 @@ layout: layouts/base.njk
 </section>
 
 <section>
-<h2>Samples</h2>
+    <h2>Samples</h2>
     <ol class="cv-list work-list">
     {% for item in jobs %}
         <li>
@@ -54,4 +54,13 @@ layout: layouts/base.njk
         </li>
     {% endfor %}
     </ol>
+</section>
+
+<section>
+    <h2>Skills</h2>
+    <ul class="cv-list skills-list tags">
+    {% for item in skills %}
+        <li>{{ item.name }}</li>
+    {% endfor %}
+    </ul>
 </section>

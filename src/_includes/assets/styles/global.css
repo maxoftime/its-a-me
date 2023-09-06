@@ -1,6 +1,8 @@
 :root {
-    --back-color: #f3f3f3;
-    --front-color: #222;
+    --front-color: #212121;
+    --back-color: #fbfbfb;
+    /*--back-color: #222;*/
+    --front-color: #12162d;
 }
 
 html {
@@ -26,18 +28,25 @@ body {
     font-family: 'Courier New', monospace;
     position: relative;
     height: 100%;
+    text-align: center;
 }
 
 p, a, h1, h2, h3, ul, li, time {
     color: var(--front-color);
 }
 
-h1, h2 {
-    font-family: 'Silkscreen';
+h1, h2, nav {
+    font-family: 'Alatsi', 'Silkscreen';
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 60px;
+    letter-spacing: -2px;
 }
 
 nav {
-    text-align: right;
+    text-align: center;
 }
 
 nav a {
@@ -56,6 +65,8 @@ nav a {
 
 p {
     max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a:hover {
@@ -64,7 +75,9 @@ a:hover {
 
 
 section {
+    margin: auto;
     margin-bottom: 44px;
+
 }
 
 section h2 {
@@ -83,8 +96,7 @@ section .cv-list li {
 }
 
 section .cv-list li * {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px auto;
 }
 
 section .cv-list li time + time {
@@ -103,6 +115,7 @@ section .tags {
     padding-left: 0;
     font-family: 'Silkscreen';
     font-size: 12px;
+    margin: auto;
 }
 
 section .tags li {
@@ -137,13 +150,14 @@ main {
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+   
+    width: 33%;
     background: var(--front-color);
     color: var(--back-color);
-    left: 0;
+    margin-right: 0;
+    margin-left: auto;
     padding: 20px 44px 44px; 
+    border-radius: 110px 130px 5px 170px;
 }
 
 footer > * {
@@ -170,10 +184,4 @@ footer a {
     .no-print {
         display: none;
     }
-}
-
-@font-face {
-    font-family: 'Silkscreen';
-    src: url('/assets/fonts/Silkscreen/Silkscreen-Regular.ttf');
-    font-display: swap; 
 }

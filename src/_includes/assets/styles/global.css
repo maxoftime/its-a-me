@@ -19,6 +19,24 @@ html, body {
     min-height: 100vh;
 }
 
+body.home {
+    --front-color: #fff;
+    --copy-color: #fff;
+    --back-color: #018281;
+}
+
+body.cases {
+    --front-color: #fff;
+    --copy-color: #fff;
+    --back-color: #212121;
+}
+
+body.resume {
+    --front-color: #f4b815;
+    --copy-color: #f4b815;
+    --back-color: #43007b;
+}
+
 body {
     background: var(--back-color);
     width: 100vw;
@@ -26,52 +44,70 @@ body {
     padding: 44px 44px;
     font-size: 18px;
     line-height: 1.4;
-    font-family: 'Courier New', monospace;
+    font-family: 'Josefin Sans', sans-serif;
     position: relative;
     height: 100%;
-    text-align: center;
 }
 
 p, a, h1, h2, h3, ul, li, time {
     color: var(--front-color);
 }
 
-h1, h2, nav {
-    font-family: 'Alatsi', 'Silkscreen';
-}
-
 h1 {
+    font-family: 'Alatsi';
     text-transform: uppercase;
     font-size: 60px;
     letter-spacing: -2px;
 }
+
 
 p {
     color: var(--copy-color);
 }
 
 nav {
-    text-align: center;
+    text-align: right;
+    margin-bottom: 3em;
 }
 
 nav a {
-    padding: 20px 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 4px;
+    font-family: 'Silkscreen';
+}
+
+nav a:hover {
+    background: var(--front-color);
+    color: var(--back-color);
 }
 
 @media screen and (max-width: 700px) {
-    nav {
-        text-align: left;
+    header {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--back-color);
+        z-index: 50;
+
     }
 
-    nav a:first-child {
-        padding-left: 0;
+    nav {
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
+
     }
+
+    
 }
 
 p {
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+
 }
 
 a:hover {
@@ -80,15 +116,9 @@ a:hover {
 
 
 section {
-    margin: auto;
     margin-bottom: 44px;
 
 }
-
-section h2 {
-    text-decoration: underline;
-}
-
 
 section .cv-list {
     list-style-type: none;
@@ -101,7 +131,8 @@ section .cv-list li {
 }
 
 section .cv-list li * {
-    margin: 10px auto;
+    margin: 10px;
+    margin-left: 0;
 }
 
 section .cv-list li time + time {
@@ -112,6 +143,13 @@ section .work-list, section .skill-list {
     line-height: 1.4;
 } 
 
+section .work-list {
+    line-height: 1.4;
+} 
+
+section .work-list li {
+} 
+
 section .skills-list {
     max-width: 700px;
 }
@@ -120,16 +158,16 @@ section .tags {
     padding-left: 0;
     font-family: 'Silkscreen';
     font-size: 12px;
-    margin: auto;
 }
 
 section .tags li {
     display: inline;
-    background: #000;
+    background: var(--front-color);
     padding: 3px 5px;
     margin-bottom: 5px;
     color: var(--back-color);
     line-height: 2.2;
+    margin: auto;
 }
 
 main {

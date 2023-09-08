@@ -1,10 +1,10 @@
 ---
 title: Resume
+currentpage: resume
 layout: layouts/base.njk
 ---
 
 <section>
-    <h2>CV</h2>
     <h3>Jobs</h3>
     <ol class="cv-list">
     {% for item in cv %}
@@ -37,25 +37,7 @@ layout: layouts/base.njk
 </section>
 
 <section>
-    <h2>Samples</h2>
-    <ol class="cv-list work-list">
-    {% for item in jobs %}
-        <li>
-            <h3>{{ item.client }}</h3>
-            <h4>{{ item.role }}</h4>
-            <p>{{ item.description }}</p>
-            <ul class="tags">
-             {% for tech in item.stack %}
-                <li>{{ tech }}</li>
-            {% endfor %}
-            </ul>
-        </li>
-    {% endfor %}
-    </ol>
-</section>
-
-<section>
-    <h2>Skills</h2>
+    <h3>Skills</h3>
     <ul class="cv-list skills-list tags">
     {% for item in skills %}
         <li>{{ item.name }}</li>

@@ -4,16 +4,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/_redirects");
   eleventyConfig.addPassthroughCopy({"src/_includes/assets/" : "assets/" });
   eleventyConfig.addPassthroughCopy({"src/demos/" : "demos/" });
-
   eleventyConfig.addPlugin(eleventyGoogleFonts);
-
   eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
-  
-
   eleventyConfig.addFilter('dateIso', date => {
     return date.toISOString();
   });
-
   eleventyConfig.addFilter('dateReadable', date => {
     return date.toLocaleDateString('sv-SE');
   });
@@ -38,8 +33,7 @@ function extractExcerpt(article) {
    
     // The start and end separators to try and match to extract the excerpt
     const separatorsList = [
-      { start: '<!-- Excerpt Start -->', end: '<!-- Excerpt End -->' },
-      { start: '<p>', end: '</p>' }
+      { start: '<!-- Excerpt Start -->', end: '<!-- Excerpt End -->' }
     ];
    
     separatorsList.some(separators => {

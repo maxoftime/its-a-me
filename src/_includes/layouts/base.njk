@@ -15,17 +15,40 @@
     <header class="no-print">
       <nav>
         <a href="/">home</a>
-        <a href="/resume">resume</a>
         <a href="/cases">cases</a>
+        <a href="/resume">resume</a>
         <!--<a href="/blog">blog</a>
         <a href="/demos">demos</a>-->
       </nav>
     </header>
 
     <main>
-      <h1>{{ title }}</h1>
       {{ content | safe }}
     </main>
+
+    <footer>
+      <section>
+        <h2>About me</h2>
+        <p>
+          My name is Max, and I am 30+ years old. I live with my family of four, right on the edge of a forest, outside of Norrköping.
+        </p>
+        <p>
+          I'm a pragmatic, no-bullshit developer who believes that the purpose and the end goals are more important than the tools I use.
+        </p>
+        <p>
+          Don't be a stranger!
+        </p>
+
+      </section>
+      <section>
+        <h2 class="no-print footer-heading">Say hi</h2>
+        <a href="mailto:hej@maxbergstrom.se">hej@maxbergstrom.se</a>
+        <br>
+        <a href="tel:+46763152978">076 315 29 78</a>
+        <br>
+        <a href="https://github.com/maxoftime">maxoftime@github</a>
+      </section>
+    </footer>
 
   </body>
 </html>

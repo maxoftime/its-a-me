@@ -60,6 +60,12 @@ const skills = [
         rating: ""
     },
     {
+        name: "Nginx",
+        platform: "Javascript",
+        type: "Serverside",
+        rating: ""
+    },
+    {
         name: "Eleventy",
         platform: "Javascript",
         type: "Static site generator",

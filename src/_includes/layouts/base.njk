@@ -8,15 +8,27 @@
     <meta name="description" content="I am Max Bergström. A web developer and web enthusiast. This is my space online, welcome.">
     <meta name="generator" content="{{ eleventy.generator }}">
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
+          }
+        }
+    </script>
+
     {% eleventyGoogleFonts 'https://fonts.googleapis.com/css2?family=Silkscreen&family=Alatsi&family=Josefin+Sans:wght@300&display=swap' %}
 
   </head>
   <body class="{{ currentpage }}">
+   <video autoplay playsinline muted loop id="background-vid" src="/assets/img/covenant.mp4"></video>
+   <!--Video by CESAR A RAMIREZ V TRAPHITHO: https://www.pexels.com/video/footage-of-a-silhouette-mountain-4999945/-->
+   
     <header class="no-print">
       <nav>
         <a href="/">home</a>
         <a href="/cases">cases</a>
-        <a href="/resume">resume</a>
+        <a href="/resume">CV</a>
         <!--<a href="/blog">blog</a>
         <a href="/demos">demos</a>-->
       </nav>
@@ -33,7 +45,7 @@
           My name is Max, and I am 30+ years old. I live with my family of four, right on the edge of a forest, outside of Norrköping.
         </p>
         <p>
-          I'm a pragmatic, no-bullshit developer who believes that the purpose and the end goals are more important than the tools I use.
+          I am a pragmatic, no-bullshit developer who believes that the purpose and the end goals are more important than the tools I use.
         </p>
         <p>
           Don't be a stranger!
@@ -50,5 +62,8 @@
       </section>
     </footer>
 
+
+    
+    <script type="module" src="/assets/js/foggy.js"></script>
   </body>
 </html>

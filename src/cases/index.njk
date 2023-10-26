@@ -15,7 +15,7 @@ pagination:
   {% if case.data.published %}
     {% if case.data.title === 'Sandqvist' %}
       <article class="case-in-feed hero">
-    {% elif case.data.title === 'Trim On - User Dashboard' or case.data.title === 'Nova 2.0' %}
+    {% elif case.data.title === 'Trim On' or case.data.title === 'Nova 2.0' %}
       <article class="case-in-feed highlight">
     {% else %}
       <article class="case-in-feed">
@@ -24,9 +24,7 @@ pagination:
           <h2>
           {{ case.data.title }}
           </h2>
-          <p class="blog-excerpt">
           {% excerpt case %}
-          </p>
       </a>
     </article>
   {% endif %}

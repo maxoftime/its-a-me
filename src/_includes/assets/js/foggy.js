@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { Sky } from 'three/addons/objects/Sky.js';
 
 // Setup
 const scrollDistance = { x: 0, y: 0 }
@@ -27,42 +26,19 @@ document.body.appendChild( renderer.domElement );
 
 
 // Content
-const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+
+//scene.fog = new THREE.Fog( 0xcccccc, 0, 15 );
+
+
+/* const light = new THREE.AmbientLight( 0x404040 ); // soft white light
 scene.add( light );
 
-const sky = new Sky();
-sky.scale.setScalar( 10 );
-
-const skyUniforms = sky.material.uniforms;
-
-skyUniforms[ 'turbidity' ].value = 0;
-skyUniforms[ 'rayleigh' ].value = 0.01;
-skyUniforms[ 'mieCoefficient' ].value = 0.005;
-skyUniforms[ 'mieDirectionalG' ].value = 0.7;
-
-const parameters = {
-    rayleigh: 0,
-    elevation: 2.25,
-    azimuth: 198.77,
-    turbidity: 2.3,
-    exposure: 0.3,
-    mieCoefficient: 0.005,
-	mieDirectionalG: 0.5,
-};
-
-/* let sun = new THREE.Vector3(); const phi = THREE.MathUtils.degToRad( 90 - parameters.elevation );
-const theta = THREE.MathUtils.degToRad( parameters.azimuth );
-sun.setFromSphericalCoords( 0.01, phi, theta );
-sky.material.uniforms[ 'sunPosition' ].value.copy( sun );
-scene.add( sky );  */
-
+ */
 
 const textureLoader = new THREE.TextureLoader()
-const groundTextureColor = textureLoader.load('/assets/img/textures/ground/baseColor.jpg')
 const groundTextureHeight = textureLoader.load('/assets/img/textures/ground/height.png')
 groundTextureHeight.wrapS = THREE.RepeatWrapping;
 groundTextureHeight.wrapT = THREE.RepeatWrapping;
-//groundTextureHeight.repeat.set( 4, 4 );
 
 
 const groundGeo = new THREE.PlaneGeometry( 40, 10, 100, 360 );
@@ -81,7 +57,7 @@ ground.rotation.x = -1.3962634;
 ground.position.y = -2.5;
 scene.add( ground );
 
-const leftRockGeo = new THREE.BoxGeometry( 0.7, 8, 0.2 );
+/* const leftRockGeo = new THREE.BoxGeometry( 0.7, 8, 0.2 );
 const leftRockMat = new THREE.MeshBasicMaterial( { 
     transparent: true,
     color: 0xaa0000,
@@ -89,7 +65,17 @@ const leftRockMat = new THREE.MeshBasicMaterial( {
 } );
 const leftRock = new THREE.Mesh( leftRockGeo, leftRockMat );
 leftRock.position.set(-7, 3.1, -4)
-//scene.add( leftRock );
+scene.add( leftRock );
+
+const rightRockGeo = new THREE.BoxGeometry( 0.7, 8, 0.2 );
+const rightRockMat = new THREE.MeshBasicMaterial( { 
+    transparent: true,
+    color: 0xaa0000,
+    //opacity: 0.5
+} );
+const rightRock = new THREE.Mesh( rightRockGeo, rightRockMat );
+rightRock.position.set(-7, 0, -1)
+scene.add( rightRock ); */
 
 
 

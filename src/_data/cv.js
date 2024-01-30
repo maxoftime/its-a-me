@@ -1,9 +1,18 @@
 const cv = [
     {
+        title: "Consultant in web & tech",
+        place: "XLENT",
+        startDate: "January 2024",
+        endDate: "Present",
+        description: "",
+        type: "Employed",
+        active: true
+    },
+    {
         title: "Creative Developer",
         place: "DVA - Creative Technology Studio",
         startDate: "October 2022",
-        endDate: "Present",
+        endDate: "December 2023",
         description: "",
         type: "Employed",
         active: true

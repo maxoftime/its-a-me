@@ -9,6 +9,8 @@ const renderer = new THREE.WebGLRenderer({
     antialias: true,
 });
 
+let textureLoaded = false;
+
 
 // Init
 camera.position.z = 5;
@@ -36,7 +38,9 @@ scene.add( light );
  */
 
 const textureLoader = new THREE.TextureLoader()
-const groundTextureHeight = textureLoader.load('/assets/img/textures/ground/height.png')
+const groundTextureHeight = textureLoader.load('/assets/img/textures/ground/height.jpg', function() {
+    textureLoaded = true;
+})
 groundTextureHeight.wrapS = THREE.RepeatWrapping;
 groundTextureHeight.wrapT = THREE.RepeatWrapping;
 
@@ -47,15 +51,14 @@ const groundMat = new THREE.MeshStandardMaterial( {
     displacementScale: 2,
     //roughness: groundTextureHeight,
     wireframe: true,
-    emissive: 0x333333,
+    emissive: 0x3d3b3b,
     //emissiveMap: groundTextureColor,
-    transparent: true,
-    opacity: 0.5
 } );
+
 const ground = new THREE.Mesh( groundGeo, groundMat );
 ground.rotation.x = -1.3962634;
 ground.position.y = -2.5;
-scene.add( ground );
+ground.isVisible = false;
 
 /* const leftRockGeo = new THREE.BoxGeometry( 0.7, 8, 0.2 );
 const leftRockMat = new THREE.MeshBasicMaterial( { 
@@ -93,7 +96,11 @@ function resizeRendererToDisplaySize(renderer) {
 
 // Render
 function render() {
-    
+    if (!ground.isVisible && textureLoaded) {
+        scene.add(ground)
+        ground.isVisible = true;
+    }
+
     if (resizeRendererToDisplaySize(renderer)) {
         const canvas = renderer.domElement;
         camera.aspect = canvas.clientWidth / canvas.clientHeight;
@@ -101,13 +108,8 @@ function render() {
     }
     
     if (scrollDistance.y !== window.scrollY) {
-        //if (window.scrollY < 460) {
             scrollDistance.y = window.scrollY;
-            //leftRock.rotation.y = scrollDistance.y * 0.005;
-            camera.position.y = 2 - scrollDistance.y * 0.005;
-            //groundTextureHeight.offset = new THREE.Vector2(0, scrollDistance.y / window.innerHeight * 0.1)
-
-       // }
+            groundTextureHeight.offset = new THREE.Vector2(scrollDistance.y / window.innerHeight * 0.05, scrollDistance.y / window.innerHeight * -0.05)
     }
     renderer.render( scene, camera );
 

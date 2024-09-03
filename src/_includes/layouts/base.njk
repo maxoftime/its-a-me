@@ -13,62 +13,27 @@
     <meta property=”og:description” content=”I am Max Bergström. A web developer and web enthusiast. This is my space online, welcome.”/>
     <meta property=”og:image:width” content=”1200″/>
     <meta property=”og:image:height” content=”630″/>
-    <script type="importmap">
-        {
-          "imports": {
-            "three": "/assets/js/three.module.js",
-            "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
-          }
-        }
-    </script>
 
-    {% eleventyGoogleFonts 'https://fonts.googleapis.com/css2?family=Silkscreen&family=Alatsi&family=Josefin+Sans:wght@300&display=swap' %}
+    {% eleventyGoogleFonts 'https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400&display=swap" rel="stylesheet' %}
 
   </head>
   <body class="{{ currentpage }}">
   <!--<video autoplay playsinline muted loop id="background-vid" src="/assets/img/covenant.mp4"></video>-->
    <!--Video by CESAR A RAMIREZ V TRAPHITHO: https://www.pexels.com/video/footage-of-a-silhouette-mountain-4999945/-->
    
-    <header class="no-print">
+    <!--<header class="no-print">
       <nav>
         <a href="/">home</a>
         <a href="/cases">cases</a>
         <a href="/resume">CV</a>
-        <!--<a href="/blog">blog</a>
-        <a href="/demos">demos</a>-->
+        <a href="/blog">blog</a>
+        <a href="/demos">demos</a>
       </nav>
-    </header>
-
+    </header> -->
+    {% include 'components/aside.njk' %}
     <main>
       {{ content | safe }}
     </main>
 
-    <footer>
-      <section>
-        <h2>About me</h2>
-        <p>
-          My name is Max, and I am 30+ years old. I live with my family of four, right on the edge of a forest, outside of Norrköping.
-        </p>
-        <p>
-          I am a pragmatic, no-bullshit developer who believes that the purpose and the end goals are more important than the tools I use.
-        </p>
-        <p>
-          Don't be a stranger!
-        </p>
-
-      </section>
-      <section>
-        <h2 class="no-print footer-heading">Say hi</h2>
-        <a href="mailto:hej@maxbergstrom.se">hej@maxbergstrom.se</a>
-        <br>
-        <a href="tel:+46763152978">076 315 29 78</a>
-        <br>
-        <a href="https://github.com/maxoftime">maxoftime@github</a>
-      </section>
-    </footer>
-
-
-    
-    <script type="module" src="/assets/js/foggy.js"></script>
   </body>
 </html>

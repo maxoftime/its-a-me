@@ -1,27 +1,30 @@
+@import url('./animations.css');
+
 @view-transition {
 	navigation: auto;
 }
 
-
 :root {
-    --front-color: #212121;
-    --front-color: #f2f2f2;
-    /*--back-color: #222;*/
-    --back-color: #1067af;
-    --back-color-light: #116bb4;
-    --copy-color: #f2f2f2;
     --main-padding: 3rem;
-
-
-    --color-1: rgb(171, 0, 3); 
-    --color-2: rgb(3, 168, 0); 
-    --color-3: rgb(0, 158, 172); 
-
+    
+    --front-color: #FF6E00;
+    --back-color: #010B14;
+    --back-color-light: #2b001d;
+    --copy-color: var(--front-color);
 }
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --front-color: #fff;
+        --back-color: #0D5B9C;
+        --back-color-light: #1f66a1f7;
+    }
+}
+
 
 html {
     box-sizing: border-box;
-    
+    background: var(--back-color)
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -39,9 +42,9 @@ body {
     width: 100vw;
     height: 100%;
     padding: 10vh 10vw 10vh;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.4;
-    font-family:  'Chakra Petch', 'Turret Road', 'Red Hat Display', 'Staatliches', sans-serif;
+    font-family:  'Chakra Petch','Red Hat Display', sans-serif;
     position: relative;
     background-size: 100%;
     background-position: 100% 0%;
@@ -59,6 +62,21 @@ p, a, h1, h2, h3, ul, li, time {
     font-weight: 400;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(var(--back-color) 50%, var(--back-color-light) 50%), linear-gradient(90deg, var(--back-color), var(--back-color-light), rgba(0, 0, 255, 0.06));
+        background-size: 100% 3px, 5px 100%;
+    }
+
+    p, a, h1, h2, h3, ul, li, time {
+        text-shadow: rgb(224 0 0) 0px 0px 10px; 
+    }
+}
+p, a, h1, h2, h3, ul, li, time {
+    color: var(--front-color);
+    font-weight: 400;
+}
+
 h1 {
     font-family:  'Chakra Petch','Turret Road',sans-serif;
     font-size: 4em;
@@ -67,11 +85,13 @@ h1 {
     margin-top: 0;
     position: relative;
     margin-left: -0.08em;
+    word-break: break-word;
+    
 }
 
 h2 {
     font-size: 2.75rem;
-    line-height: 1.4rem;
+    line-height: 0.8em;
 }
 
 #background-vid, .canvas-background {
@@ -92,20 +112,39 @@ p {
 a {
     margin-bottom: 0.2em;
     display: inline-block;
+    text-decoration: underline;
+}
+
+a[data-active="true"] {
     text-decoration: none;
-    box-shadow:  0 -0.2em 0 0 var(--back-color) inset, 0 -0.25em 0 0 var(--front-color) inset;
 }
 
 
 a:hover {
     text-decoration: none;
-    background: var(--front-color);
-    color: var(--back-color);
+    animation: glitch 0.32s ease-in-out;
+    animation-fill-mode: both;
 }
 
 main {
     padding: 0 var(--main-padding) 4em;
 }
+
+
+.wow  {
+    background-image: radial-gradient( violet, lightblue, green, yellow, orange, red, orange, yellow, green, lightblue, violet);
+    background-position: 0 0;
+    background-size: 800% 800%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-family: "Jaquard 12", cursive;
+    font-size: 1.5em;
+    line-height: normal;
+    animation: rainbow 4s linear infinite;
+}
+
+
 
 aside {
     padding: 0 calc(var(--main-padding) / 2) 0 0;
@@ -133,10 +172,6 @@ nav a {
     position: relative;
 }
 
-nav a[data-active="true"] {
-    box-shadow: unset;
-}
-
 nav a[data-active="true"]:before {
     content: "> ";
     position: absolute;
@@ -147,23 +182,7 @@ nav a[data-active="true"]:before {
     animation: blink 1.4s infinite;
 }
 
-@keyframes blink {
-    0% {
-        opacity: 0;
-    }
-    25% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 1;
-    }
-    75% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
+
 
 
 footer {
@@ -198,8 +217,6 @@ section .cv-list li {
 }
 
 section .cv-list li * {
-    margin: 10px;
-    margin-left: 0;
 }
 
 section .cv-list li time + time {
@@ -340,8 +357,6 @@ body.cases video   {
     margin: auto;
     border-radius: 1px;
     white-space: nowrap;
-    mix-blend-mode: luminosity;
-    background: #aafff7;
 }
 
 .blog-post-in-feed  {
@@ -397,10 +412,14 @@ body.cases video   {
         grid-template-columns: 1fr;
     }
 
+    main {
+        filter: unset;
+    }
+
     .menu-label {
         display: flex;
         position: fixed;
-        bottom: 0;
+        bottom: calc((var(--main-padding) / 3));
         right: calc((var(--main-padding) / 2) + 2px);
         z-index: 200;
         color: var(--front-color);
@@ -409,10 +428,13 @@ body.cases video   {
     .menu-label:before {
         font-size: 3rem;
         content: "≡";
+        animation: unset;
     }
     
     #menu-toggle:checked + .menu-label:before {
         content: "×";
+        animation: glitch 0.32s ease-out;
+        animation-fill-mode: both;
     }
     
     #menu-toggle {
@@ -421,9 +443,7 @@ body.cases video   {
         position: absolute;
     }
 
-    #menu-toggle:checked ~ aside {
-        transform: translateX(0);
-    }
+    
 
     aside {
         padding: calc(var(--main-padding)* 2) calc(var(--main-padding) / 2);
@@ -440,17 +460,71 @@ body.cases video   {
         background: var(--back-color);
         width: 100%;
         z-index: 100;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in;
-        box-shadow: -2px 0px 5px 0 #00000050;
-        background-image:  linear-gradient(var(--back-color-light) 1.6px, transparent 1.6px), linear-gradient(90deg, var(--back-color-light) 1.6px, transparent 1.6px), linear-gradient(var(--back-color-light) 0.8px, transparent 0.8px), linear-gradient(90deg, var(--back-color-light) 0.8px, var(--back-color) 0.8px);
-        background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
-        background-position: -1.6px -1.6px, -1.6px -1.6px, -0.8px -0.8px, -0.8px -0.8px;
+        background: #000a;
+        opacity: 0;
+    }
+
+    aside a {
+        box-shadow: unset;
+        text-decoration: underline;
+        transform-origin: left;
+    }
+
+    aside a[data-active="true"] {
+        text-decoration: none;
     }
 
     main {
         padding: 0;
     }
+
+
+    #menu-toggle:checked ~ aside {
+        animation: show-menu 0.2s ease-in;
+        animation-fill-mode: forwards;
+    }
+    
+    #menu-toggle:not(:checked) ~ aside {
+        animation-direction: reverse;
+        animation: hide-menu 0.2s ease-in;
+        animation-fill-mode: forwards;
+    }
+
+
+    #menu-toggle:checked ~ aside + main {
+        animation: pixelate .3s ease-out;
+        animation-fill-mode: forwards;
+        animation-direction: forwards;
+    }
+
+     
+    #menu-toggle:not(:checked) ~ aside + main {
+        animation: depixelate .3s ease-out;
+    }
+
+
+    
+   #menu-toggle:checked ~ aside * * {
+        animation: depixelate 0.3s ease-out;
+        animation-fill-mode: forwards;
+    }
+
+    #menu-toggle:not(:checked) ~ aside * * {
+        animation: pixelate 0.3s ease-out;
+        animation-direction: reverse;
+    }
+
+
+    #menu-toggle:checked ~ aside * *:nth-of-type(1) { animation-delay: 0.1s; }
+    #menu-toggle:checked ~ aside * *:nth-of-type(2) { animation-delay: 0.2s; }
+    #menu-toggle:checked ~ aside * *:nth-of-type(3) { animation-delay: 0.3s; }
+    #menu-toggle:checked ~ aside * *:nth-of-type(4) { animation-delay: 0.4s; }
+    #menu-toggle:checked ~ aside * *:nth-of-type(5) { animation-delay: 0.5s; }
+    #menu-toggle:checked ~ aside * *:nth-of-type(6) { animation-delay: 0.6s; }
+    #menu-toggle:checked ~ aside * *:nth-of-type(7) { animation-delay: 0.7s; }
+    #menu-toggle:checked ~ aside * *:nth-of-type(8) { animation-delay: 0.8s; }
+
+
 }
 
 @media print {
@@ -476,3 +550,21 @@ body.cases video   {
         animation: unset !important;
     }
 }
+
+@font-face {
+    font-family: 'Chakra Petch';
+    src:
+        local('Chakra Petch'),
+        url('/assets/fonts/Chakra_Petch/ChakraPetch-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jaquard 12';
+    src:
+        local('Jaquard 12'),
+        url('/assets/fonts/Jacquard_12/Jacquard12-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+  }

@@ -10,7 +10,7 @@ const cv = [
     },
     {
         title: "Creative Developer",
-        place: "DVA - Creative Technology Studio",
+        place: "DVA Creative Technology Studio",
         startDate: "October 2022",
         endDate: "December 2023",
         description: "",

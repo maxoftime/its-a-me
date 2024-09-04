@@ -1,10 +1,7 @@
-const eleventyGoogleFonts = require("eleventy-google-fonts");
-
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/_redirects");
   eleventyConfig.addPassthroughCopy({"src/_includes/assets/" : "assets/" });
   eleventyConfig.addPassthroughCopy({"src/demos/" : "demos/" });
-  eleventyConfig.addPlugin(eleventyGoogleFonts);
   eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
   eleventyConfig.addFilter('dateIso', date => {
     return date.toISOString();

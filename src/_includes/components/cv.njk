@@ -1,17 +1,10 @@
----
-title: Curriculum Vitae
-currentpage: resume
-layout: layouts/base.njk
----
-<h1>{{ title }}</h1>
+<h2>CV</h2>
 <section>
-    <h3>Jobs</h3>
     <ol class="cv-list">
     {% for item in cv %}
         {% if item.type == "Employed" and item.active == true %}
         <li>
-            <h4>{{ item.title }}</h4>
-            <h4>{{ item.place }}</h4>
+            <h4>{{ item.title }}, {{ item.place }}</h4>
             <time datetime="{{ item.startDate }}">{{ item.startDate }}</time> - <time datetime="{{ item.endDate }}">{{ item.endDate }}</time>
             <p>{{ item.description }}</p>
         </li>
@@ -21,26 +14,15 @@ layout: layouts/base.njk
 </section>
 
 <section>
-    <h3>Education</h3>
     <ol class="cv-list">
     {% for item in cv %}
         {% if item.type == "Education"  and item.active == true %}
         <li>
-            <h4>{{ item.title }}</h4>
-            <h4>{{ item.place }}</h4>
+            <h4>{{ item.title }}, {{ item.place }}</h4>
             <time datetime="{{ item.startDate }}">{{ item.startDate }}</time> - <time datetime="{{ item.endDate }}">{{ item.endDate }}</time>
             <p>{{ item.description }}</p>
         </li>
         {% endif %}
     {% endfor %}
     </ol>
-</section>
-
-<section>
-    <h3>Skills</h3>
-    <ul class="cv-list skills-list tags">
-    {% for item in skills %}
-        <li>{{ item.name }}</li>
-    {% endfor %}
-    </ul>
 </section>

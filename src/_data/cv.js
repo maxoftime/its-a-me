@@ -1,9 +1,18 @@
 const cv = [
     {
+        title: "Frontend developer",
+        place: "Newport Collection",
+        startDate: "September 2024",
+        endDate: "Present",
+        description: "",
+        type: "Employed",
+        active: true
+    },
+    {
         title: "Consultant in web & tech",
         place: "XLENT",
         startDate: "January 2024",
-        endDate: "Present",
+        endDate: "September 2024",
         description: "",
         type: "Employed",
         active: true
@@ -19,7 +28,7 @@ const cv = [
     },
     {
         title: "Frontend Developer",
-        place: "Familjen STHLM AB",
+        place: "Familjen",
         startDate: "September 2021",
         endDate: "October 2022",
         description: "",
@@ -28,7 +37,7 @@ const cv = [
     },
     {
         title: "Fullstack Developer",
-        place: "NTM AB",
+        place: "NTM",
         startDate: "February 2020",
         endDate: "September 2021",
         description: "",
@@ -37,7 +46,7 @@ const cv = [
     },
     {
         title: "Head of Digital production",
-        place: "NTM AB",
+        place: "NTM",
         startDate: "September 2017",
         endDate: "February 2020",
         description: "",
@@ -46,7 +55,7 @@ const cv = [
     },
     {
         title: "Supervisor, Digital production",
-        place: "NTM AB",
+        place: "NTM",
         startDate: "October 2015",
         endDate: "August 2017",
         description: "",
@@ -64,7 +73,7 @@ const cv = [
     },
     {
         title: "Digital ad producer (Digital production)",
-        place: "NTM AB",
+        place: "NTM",
         startDate: "October 2014",
         endDate: "October 2015",
         description: "",

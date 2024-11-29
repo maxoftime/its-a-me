@@ -1,3 +1,7 @@
+let first = true;
+let gyroA = 0;
+let gyroB = 0;
+let gyroG = 0;
 
 // GET ALL PAGES
 const url = 'https://www.svt.se/text-tv/'
@@ -62,6 +66,50 @@ window.addEventListener("keyup", (event) => {
             break;
     }
 });
+
+// PHONE controls
+window.addEventListener("deviceorientation", (e)=> {
+    if (first) {
+        first = false
+        gyroA = e.alpha;
+        gyroB = e.beta;
+        gyroG = e.gamma;
+    } else {
+        cameraDirection.forward = false;
+        cameraDirection.backward = false;
+        cameraDirection.left = false;
+        cameraDirection.right = false;
+
+        if (e.beta < gyroB - 20) {
+            cameraDirection.forward = true;
+            cameraDirection.backward = false;
+            cameraDirection.left = false;
+            cameraDirection.right = false;
+        }
+
+        if (e.beta > gyroB + 20) {
+            cameraDirection.forward = false;
+            cameraDirection.backward = true;
+            cameraDirection.left = false;
+            cameraDirection.right = false;
+        }
+
+        if (e.alpha > gyroA + 20) {
+            cameraDirection.forward = false;
+            cameraDirection.backward = false;
+            cameraDirection.left = true;
+            cameraDirection.right = false;
+        }
+
+        if (e.gamma < gyroG - 20) {
+            cameraDirection.forward = false;
+            cameraDirection.backward = false;
+            cameraDirection.left = false;
+            cameraDirection.right = true;
+        }
+    }
+
+}, true);
 
 
 // Scene, Camera, and Renderer

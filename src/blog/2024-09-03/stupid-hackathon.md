@@ -1,10 +1,11 @@
 ---
 layout: layouts/post.njk 
 title: Stupid Hackathon in Norrköping
-date: 2024-11-23
+date: 2024-11-29
 tags: ['post']
 ---
 <!-- Excerpt Start -->
-I should jot something down about Stupid hackathon. It was lots of fun and a great experience. 
+So. Last saturday was great. I hosted the first Stupid Hackathon in Norrköping. It was a multi city 
 
 <!-- Excerpt End -->
+We got to borrow the office of [Angry Creative](https://angrycreative.se). And had a great time being 

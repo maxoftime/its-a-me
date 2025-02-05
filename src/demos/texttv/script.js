@@ -228,11 +228,7 @@ const getImage = async function (page) {
 
 const addImagePlaneToHallway = (src, index, scene) => {
     const texture = new THREE.TextureLoader().load(src); // Load the image as a texture
-
-    //const geometry = new THREE.PlaneGeometry(1, 1); // Quadratic plane (can adjust dimensions if needed)
     const geometry = new THREE.BoxGeometry(1, 1, 0.075); // Adjust the depth (thickness) as needed
-    //const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
-
 
     const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
     const plane = new THREE.Mesh(geometry, material);

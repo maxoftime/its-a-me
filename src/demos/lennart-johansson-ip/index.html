@@ -14,22 +14,138 @@
     </script>
     <script type="module" src="./script.js"></script>
     <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
         body {
             margin: 0;
             padding: 0;
             background-color: #fff;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            line-height: 1.45;
+            font-weight: 200;
         }
+
         canvas {
             margin: 0;
             width: 100vw;
             height: 100vh;
             display: block;
         }
-    </style>
 
+        nav {
+            position: fixed;
+            padding: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 100%;
+            z-index: 50;
+        }
+
+        nav button {
+            background: transparent;
+            border: 1px solid #000;
+            padding: 10px 15px;
+            margin: auto 1px;
+        }
+
+        article {
+            position: absolute;
+            opacity: 0;
+            bottom: 0;
+            background: rgb(255, 255, 255);
+            padding: 15px 22px;
+            transition: 0.3s ease-out;
+            transform: translateY(10px);
+            left: 22px;
+            right: 22px;
+            border-radius: 13px 13px 0 0;
+            box-shadow: 0px 10px 6px rgba(0,0,0,0.7);
+        }
+
+        article p {
+            max-width: 500px;
+        }
+
+
+        article.active {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    </style>
 
 </head>
 <body>
+    <nav>
+        <button id="fields-button">Ulriksdals gräs växer mot himlen</button>
+        <button id="facilities-button">Ett AIK</button>
+        <button id="solar-button">Den oövervinnerliga solen</button>
+        <button id="surroundings-button">A:et i Gnaget</button>
+        <button id="close-button">Dölj info</button>
+    </nav>
 
+    <article id="fields">
+        <h1>Ulriksdals gräs växer mot himlen</h1>
+        <p>
+            Anläggningen erbjuder fyra toppmoderna hybridfotbollsplaner, varav en inomhushall, designade för att ge optimalt spelunderlag i alla väder.
+            Planerna har ett avancerat självbevattningssystem som effektivt återanvänder regnvatten, vilket minskar vattenförbrukningen och gör anläggningen
+            ännu mer hållbar.
+        </p>
+        <p>
+            Dessutom bidrar planernas smarta dräneringssystem till att hantera stora mängder nederbörd och minska risken för översvämningar i området.
+        </p>
+    </article>
+
+    <article id="facilities">
+        <h1>Ett AIK</h1>
+        <p>
+            Det stora klubbhuset samlar allt en elitklubb behöver: toppmoderna gym- och medicfaciliteter, omklädningsrum i världsklass, flexibla kontorslösningar,
+            ett mediacenter och en restaurang med plats för både spelare och supportrar. En plats där AIK:s historia möter framtiden.
+        </p>
+    </article>
+
+    <article id="solar">
+        <h1>Den oövervinnerliga solen</h1>
+        <p>
+            De stora takytorna är täckta med solceller som inte bara försörjer anläggningen med energi – de kan på en bra dag generera förnybar el
+            motsvarande en tredjedel av hela Solnas behov.
+
+        </p>
+        <p>
+            Tillsammans med Craftor tar AIK ledningen även utanför planen, med en anläggning som driver framtidens hållbara idrott.
+        </p>
+    </article>
+
+    <article id="surroundings">
+        <h1>A:et i Gnaget</h1>
+        <p>
+            id entrén möts besökare av en vacker park, öppen för alla. Här kan man slå sig ner för en fika, umgås och njuta av den natursköna miljön.
+            Genom parken löper en historisk allé som berättar AIK:s stolta historia – från grundandet 1891 till dagens framgångar.
+        </p>
+        <p>
+            För de kringboende förstärks och bevaras naturområdet, medan de nedsänkta fotbollsplanerna och
+             inomhushallen smälter in i landskapet och minimerar det visuella intrycket.
+            En plats där AIK är en del av både staden och naturen.
+        </p>
+    </article>
+
+    <script>
+        const content = document.querySelectorAll('article')
+
+        const buttons = document.querySelectorAll('button')
+        for (let button of buttons) {
+            button.addEventListener('click', function(e) {
+                for (let item of content) {
+                    if (item.id + '-button' === e.target.id) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                }
+            })
+        }
+    </script>
 </body>
 </html>

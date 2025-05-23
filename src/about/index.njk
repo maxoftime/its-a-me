@@ -4,8 +4,9 @@ currentpage: about
 layout: layouts/base.njk
 ---
 <h1>{{ title }}</h1>
-<section style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-    <section style="grid-column-start: 1; grid-column-end: 1;">
+<section>
+    <!--
+    <section>
         <h2>About</h2>
         <p>
             An experienced frontend developer who has worked with the web in many different roles and projects. Among other things, national sales systems, user portals and communicating visualization. With tools like HTML, CSS, JS, React and typescript. Max strongly believes in an accessible and inclusive web and therefore leans towards established design principles, accessibility methods (similar to WCAG guidelines) and semantic HTML.
@@ -13,11 +14,11 @@ layout: layouts/base.njk
         <p>
             He has worked with the entire product chain from design sketches to devops and is not afraid to take on new areas when needed. Max's education in design and communication has strengthened his ability to identify and evaluate good user experiences. Regardless of the role, Max contributes to a good atmosphere in his teams and he is easy to adapt and adapt to.
         </p>
-    </section>
-    <section style="grid-column-start: 2; grid-column-end: 2;">
+    </section>-->
+    <section>
         {% include "components/cv.njk" %}
     </section>
-    <section style="grid-column-start: 1; grid-column-end: 3;">
+    <section>
         {% include "components/skillcloud.njk" %}
     </section>
     

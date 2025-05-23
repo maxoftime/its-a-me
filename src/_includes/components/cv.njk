@@ -4,7 +4,7 @@
     {% for item in cv %}
         {% if item.type == "Employed" and item.active == true %}
         <li>
-            <h4>{{ item.title }}, {{ item.place }}</h4>
+            <h3>{{ item.title }}, {{ item.place }}</h3>
             <time datetime="{{ item.startDate }}">{{ item.startDate }}</time> - <time datetime="{{ item.endDate }}">{{ item.endDate }}</time>
             <p>{{ item.description }}</p>
         </li>
@@ -18,7 +18,7 @@
     {% for item in cv %}
         {% if item.type == "Education"  and item.active == true %}
         <li>
-            <h4>{{ item.title }}, {{ item.place }}</h4>
+            <h3>{{ item.title }}, {{ item.place }}</h3>
             <time datetime="{{ item.startDate }}">{{ item.startDate }}</time> - <time datetime="{{ item.endDate }}">{{ item.endDate }}</time>
             <p>{{ item.description }}</p>
         </li>

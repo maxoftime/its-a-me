@@ -1,23 +1,17 @@
-@import url('./animations.css');
-
 @view-transition {
 	navigation: auto;
 }
 
 :root {
     --main-padding: 3rem;
-    
     --front-color: #FF6E00;
-    --back-color: #010B14;
-    --back-color-light: #2b001d;
-    --copy-color: var(--front-color);
+    --back-color: #222;
 }
 
 @media (prefers-color-scheme: light) {
     :root {
-        --front-color: #fff;
-        --back-color: #0D5B9C;
-        --back-color-light: #1f66a1f7;
+        --front-color: #333;
+        --back-color: #ffffff;
     }
 }
 
@@ -44,41 +38,38 @@ body {
     padding: 10vh 10vw 10vh;
     font-size: 20px;
     line-height: 1.4;
-    font-family:  'Chakra Petch','Red Hat Display', sans-serif;
+    font-family:
+        ui-sans-serif,
+        system-ui,
+        -system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        Roboto, Helvetica, Arial,
+        sans-serif,
+        "Apple Color Emoji";
+    font-weight: 10;
     position: relative;
-    background-size: 100%;
-    background-position: 100% 0%;
     display: grid;
     grid-template-columns: 25% 75%;
+    color: var(--front-color);
+}
 
-    background-color: var(--back-color);
-    background-image:  linear-gradient(var(--back-color-light) 1.6px, transparent 1.6px), linear-gradient(90deg, var(--back-color-light) 1.6px, transparent 1.6px), linear-gradient(var(--back-color-light) 0.8px, transparent 0.8px), linear-gradient(90deg, var(--back-color-light) 0.8px, var(--back-color) 0.8px);
-    background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
-    background-position: -1.6px -1.6px, -1.6px -1.6px, -0.8px -0.8px, -0.8px -0.8px;
+p {
+    font-weight: 200;
 }
 
 p, a, h1, h2, h3, ul, li, time {
     color: var(--front-color);
-    font-weight: 400;
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
-        background: linear-gradient(var(--back-color) 50%, var(--back-color-light) 50%), linear-gradient(90deg, var(--back-color), var(--back-color-light), rgba(0, 0, 255, 0.06));
-        background-size: 100% 3px, 5px 100%;
-    }
-
     p, a, h1, h2, h3, ul, li, time {
-        text-shadow: rgb(224 0 0) 0px 0px 10px; 
+        //text-shadow: rgb(224 0 0) 0px 0px 10px;
     }
 }
-p, a, h1, h2, h3, ul, li, time {
-    color: var(--front-color);
-    font-weight: 400;
-}
+
 
 h1 {
-    font-family:  'Chakra Petch','Turret Road',sans-serif;
     font-size: 4em;
     letter-spacing: -2px;
     line-height: 1em;
@@ -90,8 +81,10 @@ h1 {
 }
 
 h2 {
-    font-size: 2.75rem;
+    font-size: 2.25rem;
+    font-weight: 150;
     line-height: 0.8em;
+
 }
 
 #background-vid, .canvas-background {
@@ -105,7 +98,7 @@ h2 {
 }
 
 p {
-    color: var(--copy-color);
+    color: var(--front-color);
     max-width: 65ch;
 }
 
@@ -132,32 +125,40 @@ main {
 
 
 .wow  {
-    background-image: radial-gradient( violet, lightblue, green, yellow, orange, red, orange, yellow, green, lightblue, violet);
-    background-position: 0 0;
-    background-size: 800% 800%;
-    color: transparent;
-    background-clip: text;
+    //background-image: radial-gradient( violet, lightblue, green, yellow, orange, red, orange, yellow, green, lightblue, violet);
+    //background-position: 0 0;
+    //background-size: 800% 800%;
+    //color: transparent;
+    //background-clip: text;
     -webkit-background-clip: text;
-    font-family: "Jaquard 12", cursive;
-    font-size: 1.5em;
-    line-height: normal;
-    animation: rainbow 4s linear infinite;
+    font-style: italic;
+    letter-spacing: -2px;
+
 }
+.wow span {
+    animation: rainbow 2s ease infinite;
+    font-variation-settings: "wdth" 70;
+}
+.wow span:nth-child(2) {animation-delay: .1s}
+.wow span:nth-child(3) {animation-delay: .2s}
+.wow span:nth-child(4) {animation-delay: .3s}
+.wow span:nth-child(5) {animation-delay: .4s}
+.wow span:nth-child(6) {animation-delay: .5s}
 
 
 
 aside {
-    padding: 0 calc(var(--main-padding) / 2) 0 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 0;
-    border-right: 2px solid var(--front-color);
     align-items: flex-end;
     text-align: right;
     height: 80vh;
     position: sticky;
     top: 10vh;
+    font-weight: 170;
 }
 
 nav {
@@ -165,11 +166,13 @@ nav {
     display: flex;
     font-size: 2.75rem;
     gap: 0.25rem;
+    text-transform: capitalize;
 }
 
 
 nav a {
     position: relative;
+    text-decoration: none;
 }
 
 nav a[data-active="true"]:before {
@@ -186,14 +189,11 @@ nav a[data-active="true"]:before {
 
 
 footer {
-    font-size: 1.2em;
+    font-size: 0.86em;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-}
-
-footer h2 {
-    margin-bottom: 1.5rem;
+    margin-top: 1.87em;
 }
 
 nav a, footer a {
@@ -212,13 +212,18 @@ section .cv-list {
     line-height: 1;
 }
 
+
 section .cv-list li {
-    margin-bottom: 44px;
+    margin-bottom: 2em;
 }
 
-section .cv-list li * {
+section .cv-list li h4 {
+    margin-bottom: 0.75rem;
 }
 
+section .cv-list li time {
+    font-size: 0.9em;
+}
 section .cv-list li time + time {
     margin-left: 0;
 }
@@ -235,6 +240,9 @@ section .work-list li {
 } 
 
 section .skills-list {
+
+    padding-left:0;
+    list-style-type: none;
     max-width: 700px;
 }
 
@@ -306,10 +314,6 @@ body.case .excerpt img, body.case .excerpt video {
 }
 
 body.case .gallery {
-   /*  display: flex;
-    flex-wrap: wrap;
-    flex-flow: column wrap;
-    height: 150vh; */
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -325,47 +329,28 @@ body.cases video   {
     width: 100%;
     max-width: 500px;
     margin: 0 1em 1em 0;
-    /* box-shadow: 2px 2px 0px 2px var(--color-1),
-                6px 6px 0px 2px var(--color-2),
-                10px 10px 0px 2px var(--color-3);
-    border-radius: 5px; 
-    border-radius: 5px; */
 }
-/* body.case .gallery * {
-    max-width: 70%;
-    margin: 1em;
-    box-shadow: 2px 2px 0px 2px var(--color-1),
-                6px 6px 0px 2px var(--color-2),
-                10px 10px 0px 2px var(--color-3);
-    border-radius: 5px;
-} */
-
 
 .tags {
-    padding-left: 0;
-    font-family: 'Chakra Petch', 'Silkscreen';
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: 200;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
 .tags li {
-    display: inline;
     background: var(--front-color);
-    padding: 3px 5px;
-    margin-bottom: 5px;
+    padding: 7px 10px;
     color: var(--back-color);
-    line-height: 2.2;
-    margin: auto;
-    border-radius: 1px;
+    border-radius: 2px;
     white-space: nowrap;
 }
 
 .blog-post-in-feed  {
-    border: 2px solid var(--front-color);
-    padding-left: 0;
-    margin: 0 1rem 1rem 0;
-    padding: 1em 2em;
-    width: auto;
-    display: inline-block;
+    border-top: 2px solid var(--front-color);
+    margin: 0 1rem 0 0;
+    padding: 1em 0;
 }
 
 .blog-post-in-feed a::before {
@@ -377,7 +362,7 @@ body.cases video   {
 }
 
 .sub-page-intro {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .brands {
@@ -403,7 +388,7 @@ body.cases video   {
     display: none;
 }
 
-#menu-toggle {
+#nav-toggle-input {
     display: none;
 }
 
@@ -431,19 +416,18 @@ body.cases video   {
         animation: unset;
     }
     
-    #menu-toggle:checked + .menu-label:before {
+    #nav-toggle-input:checked + .menu-label:before {
         content: "×";
         animation: glitch 0.32s ease-out;
         animation-fill-mode: both;
     }
     
-    #menu-toggle {
+    #nav-toggle-input {
         display: inline;
         opacity: 0;
         position: absolute;
     }
 
-    
 
     aside {
         padding: calc(var(--main-padding)* 2) calc(var(--main-padding) / 2);
@@ -451,17 +435,22 @@ body.cases video   {
         flex-direction: column;
         justify-content: space-between;
         margin: 0;
-        border-right: 2px solid var(--front-color);
+        border-right: 14px solid var(--front-color);
         align-items: flex-end;
         text-align: right;
         height: 100%;
         position: fixed;
         inset: 0;
-        background: var(--back-color);
         width: 100%;
         z-index: 100;
-        background: #000a;
+        background: #eeeeeebb;
         opacity: 0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        aside {
+            background: #4b4a4aab;
+        }
     }
 
     aside a {
@@ -479,58 +468,55 @@ body.cases video   {
     }
 
 
-    #menu-toggle:checked ~ aside {
+    #nav-toggle-input:checked ~ aside {
         animation: show-menu 0.2s ease-in;
         animation-fill-mode: forwards;
     }
     
-    #menu-toggle:not(:checked) ~ aside {
+    #nav-toggle-input:not(:checked) ~ aside {
         animation-direction: reverse;
         animation: hide-menu 0.2s ease-in;
         animation-fill-mode: forwards;
     }
 
 
-    #menu-toggle:checked ~ aside + main {
+    #nav-toggle-input:checked ~ aside + main {
         animation: pixelate .3s ease-out;
         animation-fill-mode: forwards;
         animation-direction: forwards;
     }
 
      
-    #menu-toggle:not(:checked) ~ aside + main {
+    #nav-toggle-input:not(:checked) ~ aside + main {
         animation: depixelate .3s ease-out;
     }
 
 
     
-   #menu-toggle:checked ~ aside * * {
+   #nav-toggle-input:checked ~ aside * * {
         animation: depixelate 0.3s ease-out;
         animation-fill-mode: forwards;
     }
 
-    #menu-toggle:not(:checked) ~ aside * * {
+    #nav-toggle-input:not(:checked) ~ aside * * {
         animation: pixelate 0.3s ease-out;
         animation-direction: reverse;
     }
 
 
-    #menu-toggle:checked ~ aside * *:nth-of-type(1) { animation-delay: 0.1s; }
-    #menu-toggle:checked ~ aside * *:nth-of-type(2) { animation-delay: 0.2s; }
-    #menu-toggle:checked ~ aside * *:nth-of-type(3) { animation-delay: 0.3s; }
-    #menu-toggle:checked ~ aside * *:nth-of-type(4) { animation-delay: 0.4s; }
-    #menu-toggle:checked ~ aside * *:nth-of-type(5) { animation-delay: 0.5s; }
-    #menu-toggle:checked ~ aside * *:nth-of-type(6) { animation-delay: 0.6s; }
-    #menu-toggle:checked ~ aside * *:nth-of-type(7) { animation-delay: 0.7s; }
-    #menu-toggle:checked ~ aside * *:nth-of-type(8) { animation-delay: 0.8s; }
+    #nav-toggle-input:checked ~ aside * *:nth-of-type(1) { animation-delay: 0.1s; }
+    #nav-toggle-input:checked ~ aside * *:nth-of-type(2) { animation-delay: 0.2s; }
+    #nav-toggle-input:checked ~ aside * *:nth-of-type(3) { animation-delay: 0.3s; }
+    #nav-toggle-input:checked ~ aside * *:nth-of-type(4) { animation-delay: 0.4s; }
+    #nav-toggle-input:checked ~ aside * *:nth-of-type(5) { animation-delay: 0.5s; }
+    #nav-toggle-input:checked ~ aside * *:nth-of-type(6) { animation-delay: 0.6s; }
+    #nav-toggle-input:checked ~ aside * *:nth-of-type(7) { animation-delay: 0.7s; }
+    #nav-toggle-input:checked ~ aside * *:nth-of-type(8) { animation-delay: 0.8s; }
 
 
 }
 
 @media print {
-    body {
-        font-family: sans-serif;
-    }
     main {
         padding-bottom: 44px;
     }
@@ -550,21 +536,3 @@ body.cases video   {
         animation: unset !important;
     }
 }
-
-@font-face {
-    font-family: 'Chakra Petch';
-    src:
-        local('Chakra Petch'),
-        url('/assets/fonts/Chakra_Petch/ChakraPetch-Regular.ttf') format('truetype');
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Jaquard 12';
-    src:
-        local('Jaquard 12'),
-        url('/assets/fonts/Jacquard_12/Jacquard12-Regular.ttf') format('truetype');
-    font-style: normal;
-    font-display: swap;
-  }

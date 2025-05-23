@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.14",
+    "@11ty/eleventy": "^3.1.0",
     "eleventy-google-fonts": "^0.0.5"
   },
   "name": "its-a-me",

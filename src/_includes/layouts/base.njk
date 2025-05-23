@@ -16,22 +16,156 @@
 
   </head>
   <body class="{{ currentpage }}">
-  <!--<video autoplay playsinline muted loop id="background-vid" src="/assets/img/covenant.mp4"></video>-->
-   <!--Video by CESAR A RAMIREZ V TRAPHITHO: https://www.pexels.com/video/footage-of-a-silhouette-mountain-4999945/-->
-   
-    <!--<header class="no-print">
-      <nav>
-        <a href="/">home</a>
-        <a href="/cases">cases</a>
-        <a href="/resume">CV</a>
-        <a href="/blog">blog</a>
-        <a href="/demos">demos</a>
-      </nav>
-    </header> -->
     {% include 'components/aside.njk' %}
     <main>
       {{ content | safe }}
     </main>
 
+  <style>
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      25% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 1;
+      }
+      75% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes show-menu {
+      0% {
+        transform: translateX(0);
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+    }
+
+    @keyframes hide-menu {
+      0% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      99% {
+        opacity: 0;
+        transform: translateX(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+
+    }
+
+    @keyframes pixelate {
+      0% {
+        filter: url('#pixelate-0');
+      }
+      12.5% {
+        filter: url('#pixelate-1');
+      }
+      25% {
+        filter: url('#pixelate-2');
+      }
+      37.5% {
+        filter: url('#pixelate-3');
+      }
+      50% {
+        filter: url('#pixelate-4');
+      }
+      62.5% {
+        filter: url('#pixelate-5');
+      }
+      78% {
+        filter: url('#pixelate-6');
+      }
+      100% {
+        filter: url('#pixelate-7');
+      }
+    }
+
+    @keyframes depixelate {
+      0% {
+        filter: url('#pixelate-7');
+      }
+      12.5% {
+        filter: url('#pixelate-6');
+      }
+      25% {
+        filter: url('#pixelate-5');
+      }
+      37.5% {
+        filter: url('#pixelate-4');
+      }
+      50% {
+        filter: url('#pixelate-3');
+      }
+      62.5% {
+        filter: url('#pixelate-2');
+      }
+      78% {
+        filter: url('#pixelate-1');
+      }
+      100% {
+        filter: url('#pixelate-0');
+      }
+    }
+
+
+    @keyframes glitch {
+      0% {
+        filter: url('#pixelate-0');
+      }
+      12.5% {
+        filter: url('#pixelate-1');
+      }
+      25% {
+        filter: url('#pixelate-3');
+      }
+      37.5% {
+        filter: url('#pixelate-7');
+      }
+      50% {
+        filter: url('#pixelate-4');
+      }
+      62.5% {
+        filter: url('#pixelate-5');
+      }
+      78% {
+        filter: url('#pixelate-1');
+      }
+      100% {
+        filter: url('#pixelate-0');
+      }
+    }
+
+
+    @keyframes rainbow {
+      0% {
+        font-variation-settings: "wght" 100, "wdth" 70, "xhgt" 0.7;
+        letter-spacing: -3px;
+      }
+      50% {
+        font-variation-settings: "wght" 900, "wdth" 200, "xhgt" 1.4;
+        letter-spacing: 1px;
+      }
+      100% {
+        font-variation-settings: "wght" 100, "wdth" 70, "xhgt" 0.7;
+        letter-spacing: -3px;
+      }
+    }
+  </style>
   </body>
+
 </html>

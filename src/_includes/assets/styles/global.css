@@ -488,7 +488,7 @@ body.cases video   {
 
      
     #nav-toggle-input:not(:checked) ~ aside + main {
-        animation: depixelate .3s ease-out;
+        animation: depixelate .2s ease-out;
     }
 
 

@@ -125,13 +125,7 @@ main {
 
 
 .wow  {
-    //background-image: radial-gradient( violet, lightblue, green, yellow, orange, red, orange, yellow, green, lightblue, violet);
-    //background-position: 0 0;
-    //background-size: 800% 800%;
-    //color: transparent;
-    //background-clip: text;
     -webkit-background-clip: text;
-    font-style: italic;
     letter-spacing: -2px;
 
 }
@@ -516,9 +510,30 @@ body.cases video   {
 
 }
 
+.only-print {
+    display: none;
+}
+
 @media print {
+    body {
+        padding: 1cm 0;
+    }
+
+    @page {
+        margin: 1cm;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
     main {
         padding-bottom: 44px;
+    }
+
+    aside {
+        padding: 0;
+        top: 0;
     }
 
     footer {
@@ -527,6 +542,10 @@ body.cases video   {
 
     .no-print {
         display: none;
+    }
+
+    .only-print {
+        display: block;
     }
 }
 
